@@ -1,0 +1,13 @@
+<h3>User list</h3>
+<br><br>
+<ul class="list-group" *ngIf="!isLoading && userList.length">
+    <app-user *ngFor="let user of userList" [user]="user"></app-user>
+</ul>
+<div *ngIf="isLoading" class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<div class="alert alert-primary" role="alert" *ngIf="!isLoading && !userList.length">
+    There's no users
+</div>

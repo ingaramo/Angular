@@ -1,0 +1,22 @@
+.footer {
+    align-self: flex-end;
+    background-color: #585656;
+    color: white;
+    height: 15%;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    padding: 10;
+    position: fixed;
+    bottom: 0;
+
+
+    p {
+        padding: 50px;
+
+        span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+}
