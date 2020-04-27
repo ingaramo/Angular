@@ -1,13 +1,10 @@
-div {
-        display: flex;
-        background-color: #ffffff;
-        color: black;
-        height: 15%;
-        text-align: center;
-        padding: 10;
-        justify-content: center;
+.navbar__container{
+    display:grid;
+    text-align: center;
     
     img {
+        grid-column-end: 5;
+        grid-column-start: 1;
         width: 50%;
     }   
 }

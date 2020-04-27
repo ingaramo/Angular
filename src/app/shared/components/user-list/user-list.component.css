@@ -1,0 +1,7 @@
+ul.list-group.user-list__container{
+    position: absolute;
+    margin-bottom: 22%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}

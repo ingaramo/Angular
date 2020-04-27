@@ -23,7 +23,9 @@ const usersReducer = createReducer(
     }
     ),
     on(UserActions.FetchError, state => ({ ...state, error: true, pending: false })),
-    on(UserActions.ClearData, state => (initialState))
+    on(UserActions.DeleteOne, (state, {users}) => {
+      return {...state,data: users, pending:false, isFetchCompleted: true} 
+    })
   );
   
 export function reducer(state: UsersState | undefined, action: Action) {

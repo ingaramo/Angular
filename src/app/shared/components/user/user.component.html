@@ -1,9 +1,9 @@
-<div class="card" style="width: 18rem;" [ngClass]="{done: user.delete}">
-    <div class="card-body">
-        <h5 class="card-title">{{user.name}}</h5>
-        <li>{{user.phone}}</li>
-        <li>{{user.email}}</li>
-        <button>Detalle</button>
-    </div>
+  <div class="card user__container " style="width: 18rem;" >
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{user.name}}</li>
+      <li class="list-group-item">{{user.phone}}</li>
+      <li class="list-group-item">{{user.id}}</li>
+      <button type="button" (click)="deleteUser()" class="btn btn-dark">Borrar</button>
+      <button data-toggle="modal" data-target="#exampleModalScrollable" type="button" (click)="userDetail()" class="btn btn-light" >Detalles</button>
+    </ul>
   </div>
-  

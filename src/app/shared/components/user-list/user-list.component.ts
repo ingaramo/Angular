@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { UsersState } from '../../store/user.reducers';
 import * as fromActionsUsers from 'src/app/shared/store/user.actions';
+import { Router } from '@angular/router';
 
 
 
@@ -15,11 +16,14 @@ import * as fromActionsUsers from 'src/app/shared/store/user.actions';
 export class UserListComponent implements OnInit, OnDestroy {
 
   public userList: Usuario[] = [];
+  public detail: boolean=false;
+  public userDetail: number;
   public isLoading = true;
   private subscriptions: Subscription[] = [];
 
   constructor(
     private store: Store<{ users: UsersState }>,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -38,19 +42,37 @@ export class UserListComponent implements OnInit, OnDestroy {
       return {
         id: user.id,
         name: user.name,
-        email: 'This is description',
+        username: user.username,
+        email: user.email,
         phone: user.phone,
-        delete: false
-      }
+        website: user.website,
+        company: {
+          name: user.company.name,
+          catchPhrase: user.company.catchPhrase,
+          bs: user.company.bs
+        },
+        address: {
+            street: user.address.street,
+            suite: user.address.suite,
+            city : user.address.city,
+            zipcode: user.address.zipcode,
+        }
+    }
     });
   }
 
-  renderUsers() {
-    this.isLoading = false;
-  }
 
   ngOnDestroy() {
     this.subscriptions.forEach( (s: Subscription) => s.unsubscribe() );
+  }
+
+  onItemDelete(userId:number){
+    let id=this.userList.findIndex( user => user.id==userId )
+    this.userList.splice(id,1)
+
+  }
+  onItemDetalle(user){
+    this.router.navigate([`/user/${user.id}`]);
   }
 
 }

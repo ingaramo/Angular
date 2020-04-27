@@ -1,13 +1,16 @@
-<h3>User list</h3>
-<br><br>
-<ul class="list-group" *ngIf="!isLoading && userList.length">
-    <app-user *ngFor="let user of userList" [user]="user"></app-user>
+<br><br> 
+<ul class="list-group user-list__container" *ngIf="!isLoading && userList.length">
+    <app-user (detalles)="onItemDetalle($event)" (delete)="onItemDelete($event)" *ngFor="let user of userList" [user]="user"></app-user>
 </ul>
-<div *ngIf="isLoading" class="d-flex justify-content-center">
+<div *ngIf="isLoading" class="d-flex justify-content-center  container-xl">
     <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
+        <span class=" sr-only">Loading...</span>
     </div>
 </div>
 <div class="alert alert-primary" role="alert" *ngIf="!isLoading && !userList.length">
     There's no users
 </div>
+<div *ngIf="detail" class="d-flex justify-content-center">
+    <app-user-card  > </app-user-card>
+</div>
+

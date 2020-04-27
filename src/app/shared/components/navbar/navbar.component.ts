@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   }
 
   homeClick(){
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
   }
 
 }

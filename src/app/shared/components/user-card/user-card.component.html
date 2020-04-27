@@ -1,0 +1,126 @@
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="exampleModalScrollableTitle">User {{userDetail.id}}</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/imgs/descarga.png" class="card-img" alt="Imagen de usuario">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <h6>ID: </h6>{{userDetail.id}}
+          </li>
+          <li class="list-group-item">
+            <h6>username: </h6>{{userDetail.username}}
+          </li>
+          <li class="list-group-item">
+            <h6>name: </h6>{{userDetail.name}}
+          </li>
+          <li class="list-group-item">
+            <h6>email: </h6>{{userDetail.email}}
+          </li>
+          <li class="list-group-item">
+            <h6>phone: </h6>{{userDetail.phone}}
+          </li>
+          <li class="list-group-item">
+            <h6>website: </h6>{{userDetail.website}} 
+          </li>
+          <li class="list-group-item">
+            <h6>company: </h6>
+            <b>name: </b> {{userDetail.company.name}} <br>
+            <b>catchPhrase: </b>{{userDetail.company.catchPhrase}} <br>
+            <b>bs: </b>{{userDetail.company.bs}}
+              
+          </li>
+          <li class="list-group-item">
+            <h6>address:</h6>  
+            <b>street: </b>{{userDetail.address.street}} <br>
+            <b>suite: </b>{{userDetail.address.suite}}<br>
+            <b>city: </b>{{userDetail.address.city}} <br>
+            <b>zipcode: </b>{{userDetail.address.zipcode}}
+          </li>
+        </ul>
+        
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div class="card mb-3" >
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="assets/imgs/descarga.png" class="card-img" alt="Imagen de usuario">
+      </div>
+      <div class="contenido col-md-8">
+        <div class="card-body">
+          <p class="card-text"> id: number,
+            name: string,
+            
+            username: string,
+            email: string,
+            phone: number,
+            website: string,
+            company: 
+              name: string,
+              catchPhrase: string,
+              bs: string
+            address: 
+                street: string,
+                suite: string,
+                city : string,
+                zipcode: string,
+            </p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="card mb-3" >
+      <div class="col-md-4">
+        <img src="assets/imgs/descarga.png" class="card-img" alt="Imagen de usuario">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h6 class="card-title">Card title</h6>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              id: user.id,
+            </li>
+            <li class="list-group-item">
+              username: user.username,
+            </li>
+            <li class="list-group-item">
+              name: user.name,
+            </li>
+            <li class="list-group-item">
+              email: user.email,
+            </li>
+            <li class="list-group-item">
+              phone: user.phone,
+            </li>
+            <li class="list-group-item">
+              website: user.website,
+            </li>
+            <li class="list-group-item">
+              company:
+                name: user.company.name,
+                catchPhrase: user.company.catchPhrase,
+                bs: user.company.bs
+            </li>
+            <li class="list-group-item">
+              address: 
+                  street: user.address.street,
+                  suite: user.address.suite,
+                  city : user.address.city,
+                  zipcode: user.address.zipcode,
+            </li>
+  
+          </ul>
+        </div>
+      </div>
+    </div>
+  -->
